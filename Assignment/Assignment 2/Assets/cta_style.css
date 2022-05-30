@@ -1,0 +1,36 @@
+
+.buy {
+    color: #fff;
+    background-color: #473edb;
+}
+
+.buttons{
+    font-family: sans-serif;
+}
+.main{
+    height: 160px;
+    width: 450px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+    font-family:sans-serif;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+}
+
+.contact {
+    color: #374151;
+    margin-left: 8px;
+    font-weight: 500;
+    border: 1px solid #e5e7eb;
+    
+}
+
