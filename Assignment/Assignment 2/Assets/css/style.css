@@ -4,6 +4,12 @@
     align-items: center;
 } */
 
+.line{
+    height: 200px;
+    width: 200px;
+    background-color:black ;
+}
+
 h1{
     font-size: 50px;
 }
