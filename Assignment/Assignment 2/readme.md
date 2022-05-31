@@ -4,3 +4,5 @@
 ![CTA](./Assets/output/CTA.png)
 3.Hero
 ![Hero](./Assets/output/Hero.png)
+4.Navbar
+![Hero](./Assets/output/nav.png)
