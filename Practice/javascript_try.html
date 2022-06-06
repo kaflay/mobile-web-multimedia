@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+  </style>
+  <body>
+    <script>
+      const subject =[];
+      const marks = [];
+      let final = 0;
+      for(var i = 0; i<5;i++)
+      {
+       subject[i] =prompt("Enter subject Name");
+        marks[i] =prompt("Enter marks obtained:");
+      }
+    for(i=0;i<5;i++)
+    {
+      document.write(subject[i] + "="+ marks[i]+ "<br>");
+    }
+    for(var j=0;j< marks.length; j++){
+       final += +marks[j];
+    }
+    document.write("Total:"+final);
+    </script>
+  </body>
+</html>
