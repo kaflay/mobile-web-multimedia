@@ -1,6 +1,14 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700;900&family=Open+Sans:wght@700&family=Roboto:wght@700&display=swap');
-
+*{
+    
+    box-sizing: border-box;
+    /* margin: 0px; */
+    padding: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+html,body{
+    overflow-x: hidden;
+}
 .nav-bar{
     display: flex;
     align-items: center;
@@ -32,32 +40,48 @@ nav ul{
     cursor: pointer;
 }
 /* Mobile navbar design */
-.mobile-nav{
-    background-color: #fff;
-    display: flex;
+.mobile-navigation{
+    background-color: rgb(255, 255, 255); 
+    display: none;
 }
-.mobile-nav span{
+.mobile-navbar{
+    display: flex;
+    justify-content: space-between;
+}
+/* .fa-xmark{
+    display: none;
+} */
+.mobile-navbar span{
     font-size: 30px;
     font-weight: bolder;
     margin-left: 30px;
     cursor: pointer;
 }
-.mobile-nav .icons{
-    font-size: 20px;
-    margin: 10px ;
+.mobile-navbar .icons button{
+    padding:10px 14px;
+    color:rgb(255, 254, 254);
+    border:none;
+    background: rgb(19, 19, 19);
+    border-radius: 8px;
+    
 }
-.mobile-nav ul{
+.mobile-navbar ul{
     list-style-type: none;
     display: block;
-    justify-content: center;
+    margin: 30px 0;
+    padding: 10px 0;
 }
-.mobile-nav ul li{
+.mobile-navbar ul li{
     padding:15px;
 }
-.mobile-nav ul li a{
+.mobile-navbar ul li a{
     text-decoration: none;
     color:#000;
     padding: 10px;
+    font-weight: 550;
+}
+.mobile-navbar ul li a:hover, .mobile-navbar ul li a.active{
+    border-bottom: 3px solid #000;
 }
 /* Mobile navbar design */
 .content{
@@ -116,10 +140,15 @@ nav ul{
     width: 100%;
     border-radius: 30px;
 }
-*{
-    
-    box-sizing: border-box;
-    /* margin: 0px; */
-    padding: 0px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+@media(max-width:767px){
+    .nav-bar{
+        display:none;
+    }
+    .mobile-navigation{
+        display: block;
+    }
+    .mobile-navigation ul{
+        display: none;
+    }
 }
