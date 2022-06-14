@@ -4,33 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nav-bar Section</title>
+    <title>Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="Assets/css/navbar.css">
-    <style>
-    </style>
 </head>
+<style>
+</style>
 <body>
-    <div class="nav-bar">
-        <span>
-            <img src="Assets/img/task-nav-logo.svg" alt="Workflow Logo">
-            <h2>workflow</h2>
-        </span>
-        <ul>
-            <li><a class="active" href="#">Dashboard</a></li>
-            <li><a href="#">Team</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Calender</a></li>
-        </ul>
-        <form>
-            <label for="search"></label>
-            <img src="Assets/img/task-nav-search.svg" alt="search icon">
-            <input type="search" id="search" name="search" 
-            placeholder="Search">
-        </form>
-        <img src="Assets/img/task-nav-bell-icon.svg" alt="bell icon"
-        style="height: 25px; width: 25px; opacity: 0.3; margin: 25px 10px auto 20px;">
-        <img src="Assets/img/task-nav-user.png" alt="user profile"
-        style="border-radius:50%; height: 35px; width: 35px; margin-top: 20px;">
-    </div>
+    <nav class="nav-bar">
+        <div class="nav-left">
+            <div class="logo">
+                <img src="Assets/img/task-nav-logo.svg" alt="" class="logo-icon">
+                <h1 class="logo-text">workflow</h1>
+            </div>
+            
+            <ul class="nav-items">
+                <div class="link">
+                    <li class="active-link">
+                        <a class="active" href="#">Dashboard</a>
+                    </li>
+                    <div class="active-line"></div>
+                </div>
+                <div class="link">
+                    <li class="active-link">
+                        <a class="" href="#">Team</a>
+                    </li>
+                    <div class=""></div>
+                </div>
+                <div class="link">
+                    <li class="active-link">
+                        <a class="" href="#">Projects</a>
+                    </li>
+                    <div class=""></div>
+                </div>
+                <div class="link">
+                    <li class="active-link">
+                        <a class="" href="#">Calender</a>
+                    </li>
+                    <div class=""></div>
+                </div>
+                
+            </ul>
+
+        </div>
+        
+        <div class="nav-right">
+            <div class="search-bar">
+                <img class="search-icon" src="Assets/img/task-nav-search.svg" alt="">
+                <input type="text" placeholder="Search">
+            </div>
+            <img src="Assets/img/task-nav-bell-icon.svg" alt="" class="notification-icon">
+            <img src=".Assets/img/task-nav-user.png" alt="" class="avatar">
+
+        </div>
+        <i style="margin-top:20px ;" id="hamberger" class="fa fa-bars"></i>
+    </nav>
 </body>
 </html>

@@ -10,19 +10,25 @@
    form input{
        margin: 10px;
    }
+   #email-error,#pass-error{
+       display: none;
+       color: red;
+   }
 </style>
 <body>
     <form action="action.html"  id="login-form" method="post">
-        <label for="">Email</label>
+        <label for="email">Email</label>
         <input type="text"><br>
-        <label for="">Password</label>
-        <input type="password"><br>
+        <span class="email-error"></span>
+        <label for="password">Password</label>
+        <input  type="password"><br>
         <input type="submit">
     </form>
     <script>
         const form = document.getElementById('login-form');
 
-        form.addEventListener('submit',function(){
+        form.addEventListener('submit',function(event){
+            event.prevent
             alert("hello");
         })
     </script>

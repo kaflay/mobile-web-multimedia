@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>Learning</p>
+    <p>Another p Element</p>
+    <button id="show">Show</button>
+    <button id="hide">Hide</button>
+    <button id="toggle">Toggle</button><br><br><br>
+    <span>Country&nbsp;</span>
+    <select id="country">
+        <option value="np">Nepal</option>
+        <option value="in">India</option>
+        <option value="ca">Canada</option>
+        <option value="us">USA</option>
+        <option value="ch">China</option>
+    </select>
+    <p>Your name is <span id="display_username"></span></p>
+    <script type="text/javascript" src="./jquery3.6.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("p").click(function () {
+          alert("hi");
+        });
+      });
+
+      $("#show").click(function () {
+        $("p").show();
+      });
+
+      $("#hide").click(function () {
+        $("p").hide();
+      });
+
+      $("#toggle").click(function () {
+        $("p").toggle();
+      });
+      
+      $("#country").change(function (event) {
+        $("#display_username").text(event.target.value);
+      });
+    </script>
+  </body>
+</html>
