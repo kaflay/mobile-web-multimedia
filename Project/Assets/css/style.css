@@ -52,7 +52,7 @@ a {
     background: var(--primary-color);
 } 
 .price-area{
-    background: url(../images/price-bg.png);
+
     background-size: cover
 }
 /* section {
@@ -527,3 +527,7 @@ p {
     font-size:1.5rem;
     margin-right:1.5rem;
   }
+.text-muted:hover{
+  text-decoration: underline;
+}
+  
