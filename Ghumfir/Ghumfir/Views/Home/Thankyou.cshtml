@@ -1,0 +1,66 @@
+﻿@model  IEnumerable<Ghumfir.Models.Booking> 
+@{
+    ViewData["Title"] = "Success";
+    Layout = "~/Views/Shared/Thankyou_Layout.cshtml";
+}
+<div class="thanks">
+		<div class="container">
+			<div class="row">
+				<div class="col thanks-content">
+					<i class='bx bxs-badge-check completed-icon'></i>
+
+					<h2 class="main-heading">
+						Congrats, You're In!
+					</h2>
+					<p class="para-line">
+						Thanks for booking, we are glad to see you here.
+					</p>
+					<div class="order-content" style="margin-top:24px ;">
+						<h3 class="heading">
+							Order details
+						</h3>
+						<div class="row order-details">
+							@foreach (var item in Model)
+							{
+								<div class="col">
+								<h3>Package</h3>
+								<h3>Price</h3>
+								</div>
+								<div class="col">
+									<p>@item.Package.Name</p>
+									<p>Rs.@item.Package.Price</p>
+								</div>
+								<div class="col">
+									<p>First Name</p>
+									<p>@item.FirstName</p>
+								</div>
+								<div class="col">
+									<p>Last Name</p>
+									<p>@item.LastName</p>
+								</div>
+								<div class="col">
+									<p>Email</p>
+									<p>@item.Email</p>
+								</div>
+								<div class="col">
+									<p>Phone</p>
+									<p>@item.Phone</p>
+								</div>
+							}
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="input-field">
+			<a asp-action="PayNow" asp-controller="Home">
+              <button class="btn">
+					Pay Now
+			  </button>
+			</a>
+			
+		</div>
+	</div>
+
+

@@ -1,0 +1,98 @@
+﻿@model  IEnumerable<Ghumfir.Models.Contact> 
+@{
+    ViewData["Title"] = "Bookings";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- start banner Area -->
+        <section class="relative about-banner">
+            <div class="overlay overlay-bg"></div>
+            <div class="container">
+                <div class="row d-flex align-items-center justify-content-center">
+                    <div class="about-content col-lg-12 bannerh1">
+                        <h1 class="text-white bannerh1">
+                            Contact Us
+                        </h1>
+                        <p  class="text-white link-nav"><a style="color:#fff;" href="#">Home </a> 
+                            <i class="fas fa-arrow-right"></i></span> <a style="color:#fff;" href="#"> Contact Us</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success alert-dismissible fade show d-block mt-3 px-2" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z" />
+            </svg>
+            <strong>@TempData["Message"]</strong>
+            <button type="button" class="close text-white" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+        </div>
+    }
+        <section class="contact-page-area section-gap">
+            <div class="container">
+                <div class="row">
+                    <iframe class="mt-5 mb-5" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3515.617754950124!2d83.958451!3d28.218923800000002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399594e3ffd23277%3A0xdf1b404be3e689d5!2sLakeside%20Rd%202%2C%20Pokhara%2033700!5e0!3m2!1sen!2snp!4v1658854666998!5m2!1sen!2snp" style="width:100%; height: 445px;"></iframe>
+                    <div class="col-lg-4 d-flex flex-column address-wrap">
+                        <div class="single-contact-address d-flex flex-row">
+                            <div class="icon">
+                              <i class="fas fa-home home1"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>Lakeside, Pokhara</h5>
+                                <p>
+                                    Street 3 Lake Road
+                                </p>
+                            </div>
+                        </div>
+                        <div class="single-contact-address d-flex flex-row">
+                            <div class="icon">
+                                <i class="fas fa-phone phone1"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>+977 9846751636</h5>
+                                <p>Sun to Fri 9am to 6 pm</p>
+                            </div>
+                        </div>
+                        <div class="single-contact-address d-flex flex-row">
+                            <div class="icon">
+                                <i class="fas fa-envelope envelope1"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h5>support@krypton.com</h5>
+                                <p>Send us your query anytime!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 mb-5">
+                        <form class="form-area contact-form text-right" id="myForm" asp-action="Contacts">
+                            <div class="row">
+                                <div class="col-lg-6 form-group">
+                                    <input type="text" id="name" name="name" placeholder="Enter your name" 
+                                        class="mb-3 form-control" required="">
+
+                                    <input type="email" id="email" name="email" placeholder="Enter email address"
+                                        class="mb-3 form-control" required="">
+
+                                    <input name="subject" id="subject" placeholder="Enter subject"
+                                        class="mb-3 form-control" required="" type="text">
+                                </div>
+                                <div class="col-lg-6 form-group">
+                                    <textarea id="message" name="message" class="common-textarea form-control"
+                                        placeholder="Enter Message" required=""></textarea>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="mb-3" style="text-align: left;"></div>
+                                    <input type="submit" class="primary-btn px-5 py-2" style="float: right;">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+

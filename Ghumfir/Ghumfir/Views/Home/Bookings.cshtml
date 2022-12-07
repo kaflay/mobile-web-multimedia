@@ -1,0 +1,82 @@
+﻿@model  IEnumerable<Ghumfir.Models.Package> 
+@{
+    ViewData["Title"] = "Bookings";
+    Layout = "~/Views/Shared/_bookings.cshtml";
+}
+<!-- Top bar starts  -->
+	<div class="top-bar">
+		<h3 class="notification">Hurry Up, The number is limited</h3>
+	</div>
+	<!-- Top bar starts  -->
+
+	<!-- Header section starts from here -->
+	
+	   <section class="header">
+		<div class="container">
+			@using (Html.BeginForm("Thankyou","Home", FormMethod.Post))
+            {
+			   <div class="row">
+				<div class="col header-content">
+					<h3 class="subheading">
+						Join the Webinar
+					</h3>
+					<h2 class="main-heading">
+						Improve your Visiting Plans <span>Fast and Easy</span>
+					</h2>
+					<div class="inner-row">
+						<div class="col">
+							<h3 class="date">
+								<i class='bx bx-calendar'></i> 1st July 2021
+							</h3>
+						</div>
+						<div class="col">
+							<h3 class="time">
+								<i class='bx bxs-hourglass-top'></i> 4:00 PM
+							</h3>
+						</div>
+					</div>
+					<p class="para-line white">
+						Book your Plan 
+					</p>
+				</div>
+			     <div class="col header-form">
+						<div class="form-area">
+							<h2 class="form-heading">
+								Grab Your Seat
+							</h2>
+							<hr>
+							<form asp-action="Thankyou" class="booking-form">
+								<div class="form-row">
+									<div class="col">
+										<div class="input-field">
+											<label for="firstName">First Name</label>
+											<input type="text" id="first_name" name="first_name">
+										</div>
+									</div>
+									<div class="col">
+										<div class="input-field">
+											<label for="lastName">Last Name</label>
+											<input type="text" id="last_name" name="last_name">
+										</div>
+									</div>
+								</div>
+								<div class="input-field">
+									<label for="emailId">Email address</label>
+									<input type="email" id="email" name="email">
+								</div>
+								<div class="input-field">
+									<label for="phone">Phone Number</label>
+									<input type="tel" id="phone" name="phone">
+								</div>
+							    <input type="submit" class="btn btn-block" value="Book Now" style="background:#f9980f;color:#fff"/>
+							    
+							</form>	
+						</div>
+					</div>
+			</div>
+			}
+		</div>
+	</section>
+	
+	<!-- Header section ends from here -->
+

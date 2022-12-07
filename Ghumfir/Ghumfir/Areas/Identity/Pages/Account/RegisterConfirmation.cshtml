@@ -1,0 +1,58 @@
+﻿@page
+@model RegisterConfirmationModel
+@{
+    ViewData["Title"] = "Register confirmation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    if (@Model.DisplayConfirmAccountLink)
+    {
+        
+        <!-- start banner Area -->
+        <section class="relative about-banner">
+          <div class="overlay overlay-bg"></div>
+            <div class="container">
+                <div lass="row d-flex align-items-center justify-content-center">
+                   <div class="about-content col-lg-12 bannerh1">
+                    <h1 class="text-white bannerh1">
+                            Register
+                    </h1>
+                    <p class="text-white link-nav"><a style="color:#fff;" href="#">Home</a>
+                    <span><i class="fas fa-arrow-right"></i></span><a style="color:#fff;" href="#">Registration Confirmation</a>
+                    </p>
+                   </div>
+                </div>
+            </div>
+        </section>
+        <section  style=" background: url(../images/price-bg.png);" class="price area">
+            <div class="container py-5 h-100">
+              <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-xl-10">
+                  <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                      <div class="col-md-6 col-lg-5 d-none d-md-block">
+                        <img style="object-fit:cover; height:100%;" src="~/images/login-banner.jpg"
+                          alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                      </div>
+                      <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                        <div class="card-body p-4 p-lg-5 text-black">
+          
+                         <h5 class="text-center">Please check your mail to confirm your account</h5>
+          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+    }
+    else
+    {
+        
+       
+    }
+}
+

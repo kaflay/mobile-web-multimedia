@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Ghumfir.Areas.Identity.Data
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @if(UserManager.GetUserAsync(User).Result.Image != null)
+    {
+        <div class="image">
+         <img src="data:user/*;base64,@(Convert.ToBase64String(UserManager.GetUserAsync(User).Result.Image))" class="img-circle" alt="User Image">
+        </div>
+    }
+    else
+    {
+        <div class="image">
+         <img src="~/users/user.png" class="img-circle" alt="User Image">
+        </div>
+    }
+    <div class="info">
+        <a href="/Admin/Manage/Index" class="d-block">@UserManager.GetUserName(User)</a>
+    </div>
+}
+

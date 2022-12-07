@@ -1,0 +1,164 @@
+﻿@page
+@model IndexModel
+@inject UserManager<User> UserManager
+@{
+    ViewData["Title"] = "Profile";
+    ViewData["ActivePage"] = ManageNavPages.Index;
+}
+@if(TempData["Message"] != null)
+    {
+                        
+        <div class="alert alert-success alert-dismissible fade show d-block mt-3 px-2" role="alert">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+            </svg>
+            <strong>@TempData["Message"]</strong>
+                <button type="button" class="close text-white" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                            
+        </div>
+    }
+<div class="row gutters main px-4 mt-4">
+    
+        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12s">
+        <div class="card h-100">
+	        <div class="card-body">
+		        <div class="account-settings">
+			        <div class="user-profile">
+				        <div class="user-avatar">
+					        <div class="user-avatar d-flex justify-content-center">
+                        @if (Model.Input.Image != null)
+                        {
+                            <img class="d-block rounded-circle" id="image" alt="profile picture" src="data:user/*;base64,@(Convert.ToBase64String(Model.Input.Image))"/>
+                        }
+                        else
+                        {
+                            <img class="d-block rounded-circle" id="image" alt="profile" src="~/users/user.png" width="200" />
+                        }  
+                    </div>
+				        </div>
+				        <h5 class="user-name">@UserManager.GetUserName(User)</h5>
+			        </div>
+		        </div>
+	        </div>
+        </div>
+        </div>
+        <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+        <div class="card h-100">
+	        <div class="card-body">
+		        <div class="row gutters">
+			        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				        <h6 class="mb-2 text-primary">Personal Details</h6>
+			        </div>
+			
+		        <form id="profile-form" method="post" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="file-upload d-flex justify-content-center">
+                        <input type="file" accept="user/*" asp-for="Input.Image" onchange="document.getElementById('image').src=window.URL.createObjectURL(this.files[0])" name="image" id="image">
+                        <span asp-validation-for="Input.Image" class="text-danger"></span>
+                    </div>
+                    <div class="user-form px-3 pb-3 mt-3">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-lg-6 col-md-6 mb-2">
+                                <label asp-for="Input.Name"></label>
+                                <input asp-for="Input.Name" type="text" class="form-control">
+                            </div>
+                                <div class="col-12 col-sm-12 col-lg-6 col-md-6 mb-2">
+                                <label asp-for="Input.Address"></label>
+                                <input asp-for="Input.Address" type="text" class="form-control" >
+                            </div>
+                            <div class="col-12 col-sm-12 col-lg-6 col-md-6 mb-2">
+                                <label asp-for="Input.PhoneNumber"></label>
+                                <input asp-for="Input.PhoneNumber" type="tel" class="form-control">
+                            </div>
+                            <div class="col-12 col-sm-12 col-lg-6 col-md-6 mb-2">
+                                <label for="email">Username</label>
+                                <input asp-for="Username" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row gutters mt-3">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="text-right">
+                                    <button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
+                                    <button id="submit" type="submit" class="btn btn-primary">Update</button>
+                                </div>
+                            </div>
+                        </div>
+                        @* <button id="update-profile-button" type="submit" class="btn btn-primary mt-3">Save</button>
+                        <input type="submit" value="Cancel" class="btn btn-secondary mt-3 ml-3"> *@
+
+                    </div>
+                </form>
+		
+	        </div>
+        </div>
+        </div>
+        </div>
+</div>
+<style type="text/css">
+
+.main{
+    height:60vh;
+}
+.account-settings .user-profile {
+    margin: 0 0 1rem 0;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+.account-settings .user-profile .user-avatar {
+    margin: 0 0 1rem 0;
+}
+.account-settings .user-profile .user-avatar img {
+    width: 210px;
+    height: 170px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+}
+.account-settings .user-profile h5.user-name {
+    margin: 0 0 0.5rem 0;
+}
+.account-settings .user-profile h6.user-email {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #9fa8b9;
+}
+.account-settings .about {
+    margin: 2rem 0 0 0;
+    text-align: center;
+}
+.account-settings .about h5 {
+    margin: 0 0 15px 0;
+    color: #007ae1;
+}
+.account-settings .about p {
+    font-size: 0.825rem;
+}
+.form-control {
+    border: 1px solid #cfd1d8;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    font-size: .825rem;
+    background: #ffffff;
+    color: #2e323c;
+}
+
+.card {
+    background: #ffffff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 0;
+    margin-bottom: 1rem;
+}
+
+
+</style>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

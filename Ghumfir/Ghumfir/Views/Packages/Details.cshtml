@@ -1,0 +1,51 @@
+﻿@model Ghumfir.Models.Package
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/Admin.cshtml";
+}
+
+<div>
+    <div class="tab-pane fade in show d-block pt-2 pb-5 px-4">
+        <h2 class="text-bold">Details</h2>
+        <hr class="bg-white text-white " />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Description)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Image)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Price)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Price)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Category)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Category.Name)
+            </dd>
+        </dl>
+    </div>
+</div>
+<a class="btn btn-primary text-decoration-none text-white ml-3 px-4 py-2" asp-action="Edit"
+    asp-route-id="@Model?.Id">Edit</a>
+<div class="back-btn">
+    <a class="nav-link text-white" asp-action="Index" style="border-left:2px solid #fff;padding-left:10px">Back to
+        List</a>
+</div>

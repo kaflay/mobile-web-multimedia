@@ -1,0 +1,27 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using Ghumfir.Areas.Identity.Data
+
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+
+@if (SignInManager.IsSignedIn(User))
+{
+   
+   <li class="nav-item">
+      <a class="nav-link" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Profile</a>
+    </li>
+    <li class="nav-item mt-3 mt-lg-0">
+        <form id="logoutForm" class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+        <button type="submit" style="outline:none;border:none;"><i class="fa-solid fa-arrow-right-from-bracket mt-2" style="font-size: 18px;"></i></button>
+        </form>
+        
+    </li>
+}
+else
+{
+    <li class="nav-item mt-3 mt-lg-0">
+        <a class="primary-btn text-white text-decoration-none" id="register" asp-area="Identity" asp-page="/Account/Login">Login
+        </a>
+    </li>
+}

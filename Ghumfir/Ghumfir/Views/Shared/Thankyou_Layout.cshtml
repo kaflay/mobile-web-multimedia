@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Success</title>
+
+	
+	<!------ External CSS ------>
+	<link rel="stylesheet" href="~/css/thanks-style.css">
+	<!-- <link rel="stylesheet" href="./Assets/css/style_booking.css"> -->
+
+	<!-- Box icon CDN -->
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+   
+</head>
+<body >
+    
+    @RenderBody()
+    
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
